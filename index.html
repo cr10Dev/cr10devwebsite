@@ -11,20 +11,50 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
     </head>
-    <body onload="loadPartials();">
+    <body onload="loadPartials('./partials.json');">
         <div class="navbar-insert"></div>
+        <!-- ACTUAL HOMEPAGE CONTETN, I THINK-->
+        <main style="margin-top: 100px">
+            <div class="d-none d-sm-block" >
+                <div style="position: relative;">
+                    <!--CAROUSEL-->
+                    <div id="carouselNewUpdates" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselNewUpdates" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselNewUpdates" data-slide-to="1" class></li>
+                            <li data-target="#carouselNewUpdates" data-slide-to="2" class></li>
+                        </ol>
+                        
+                        <div class="carousel-inner">
+                            <a href="#" class="carousel-item active">Hey, this is working</a>
+                            <a href="#" class="carousel-item ">If I'm here, something worked</a>
+                            <a href="#" class="carousel-item ">Do I start again?</a>
+                        </div>
 
+                        <a class="carousel-control-prev" href="#carouselNewUpdates" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselNewUpdates" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </main>
         <!-- SOME SEMBLANCE OF HOMEPAGE CONTENT -->
-        <h2 style="margin-top: 60px; text-align: center;">WELCOME TO MY WEBSITE</h2>
+        <h2 style="text-align: center;">WELCOME TO MY WEBSITE</h2>
         <p style="text-align: center;">So, I'm a developer, I love D&amp;D, and I make things. Sometimes, when I make things, you guys here will see them.</p>
-        <p style="text-align: center;">The intention is that this website will be a place to demonstrate projects, give text-based tutorials, and give <a href="https://critrole.com">Critical Role</a> reactions.</p>
+        <p style="text-align: center;">The intention is that this website will be a place to demonstrate projects,
+             give text-based tutorials, and give <a href="https://critrole.com" target="_blank">Critical Role</a> reactions.</p>
         
         <h2 style="text-align: center;"><b>I HAVE A PROBLEM</b></h2>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h1 style="text-align: center;"><b>I KNOW</b></h1>
-        <br><br><br><br><br>
+        
+        <h1 style="text-align: center; margin-top: 550px;"><b>I KNOW</b></h1>
+        
 
-
+        
     </body>
 </html>

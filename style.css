@@ -1,6 +1,7 @@
+.carousel {
+    position: relative;
+}
 
-
-
-.nav-link {
-    color: #6e1100;
+.carousel-item {
+    text-align: center;
 }
