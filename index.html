@@ -11,6 +11,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         
     </head>
     <body onload="loadPartials('./partials.json');">
@@ -21,24 +22,26 @@
                 <div style="position: relative;">
                     <!--CAROUSEL-->
                     <div id="carouselNewUpdates" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselNewUpdates" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselNewUpdates" data-slide-to="1" class></li>
-                            <li data-target="#carouselNewUpdates" data-slide-to="2" class></li>
-                        </ol>
+                        
                         
                         <div class="carousel-inner">
                             <a href="#" class="carousel-item active">Hey, this is working</a>
                             <a href="#" class="carousel-item ">If I'm here, something worked</a>
                             <a href="#" class="carousel-item ">Do I start again?</a>
                         </div>
-
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselNewUpdates" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselNewUpdates" data-slide-to="1" class></li>
+                            <li data-target="#carouselNewUpdates" data-slide-to="2" class></li>
+                        </ol>
                         <a class="carousel-control-prev" href="#carouselNewUpdates" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </a>
                         <a class="carousel-control-next" href="#carouselNewUpdates" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+
+                        
 
                     </div>
                 </div>
@@ -54,7 +57,7 @@
         
         <h1 style="text-align: center; margin-top: 550px;"><b>I KNOW</b></h1>
         
-
+        {{}}
         
     </body>
 </html>
