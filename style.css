@@ -1,11 +1,14 @@
 .carousel {
     position: relative;
 }
-
+.navbar {
+    background-color: #fc0000;
+}
 .carousel-item {
     text-align: center;
 }
 
 body {
-    background-color: #000000;
+    background-color: #2e2e2e;
+    color: #ffffff;
 }
