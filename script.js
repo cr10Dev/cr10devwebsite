@@ -1,5 +1,5 @@
 async function loadPartials(partialPath) {
-    leJSON = undefined
+    leJSON = undefined;
     await $.getJSON(partialPath, function(json) {
     leJSON = json
     });
