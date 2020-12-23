@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST</title>
+    <!-- CDN LIBRARIES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--tf.js and p5 libraries-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+
+    <!--Own libraries-->
+    <script src="https://cr10dev.github.io/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cr10dev.github.io/style.css">
+    <script src="origmnist.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" type="text-css" href="origmnist.css">
+
+</head>
+<body onload="loadPartials('https:\/\/cr10dev.github.io\/partials.json');">
+    <div class="navbar-insert"></div>
+    <main>
+        <h1>MNIST Number Recognition</h1>
+        <h2 class="text-muted">How to create DNN, CNN, and RNNs for MNIST in <a href="https://www.tensorflow.org/" target="_blank">tensorflow.py</a>
+            and <a href="https://www.tensorflow.org/js" target="_blank">tensorflow.js</a>.</h2>
+
+        <!-- Grid System for dual content-->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">JS Side</div>
+                <div class="col-6">Python side</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
