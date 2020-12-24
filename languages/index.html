@@ -13,10 +13,48 @@
     <script src="https://cr10dev.github.io\/script.js"></script>
     <link rel="stylesheet" href="https://cr10dev.github.io/style.css">
 </head>
-<body>
+<body onload="loadPartials('https:\/\/cr10dev.github.io\/partials.json')">
     <div class="navbar-insert"></div>
 
-    <main></main>
+    <main>
+        <div class="d-none d-sm-block">
+            <h1>So, you want to learn a weird language that has no practical use in real life?</h1>
+            <h3 class="text-muted">Well, then you're in luck. I, the most un-qualified man on the internet, will teach you.</h3>
+            <div style="position: relative;">
+                <!--CAROUSEL-->
+                <div id="carouselNewUpdates" class="carousel slide" data-ride="carousel">
+                    
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <img src="klingon-writing.png" style="width: 100%;">
+                            <div class="carousel-caption"><h3 class="text-muted">Klingon</h3></div>
+                        </div>
+                        <div class="carousel-item"><a href="klingon">
+                            <img src="quenya-writing.png" style="width: 100%;">
+                            <div class="carousel-caption"><h3 class="text-muted">Sindarin</h3></div></a>
+                        </div>
+
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselNewUpdates" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselNewUpdates" data-slide-to="1"></li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#carouselNewUpdates" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselNewUpdates" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="d-block d-sm-none">
+            <h3>Languages are amazing.</h3>
+            <p>Sadly for you, I know 5: English (duh), French (mon fran&ccedil;ais est tr&egrave;s mal), Japanese (私は日本語を教えていません), Klingon (tlhIngan Hol jIjatlhlaH), and I'm learning Sindarin.</p>
+            <p>As you can tell if you hoof that through Google Translate, I'm only (semi-)quallified to teach Klingon, but I'll do Sindarin anyway as teaching a language helps consolidate it.</p>
+        </div>
+    </main>
     
 </body>
 </html>
