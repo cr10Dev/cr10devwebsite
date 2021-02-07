@@ -7,5 +7,4 @@ const convert = () => {
         //parse
         texts[i].innerHTML = text;
     }
-
 }
