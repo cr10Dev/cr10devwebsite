@@ -44,7 +44,17 @@ const tengwar = [
     ["nqu", "v"],
     ["nw", "b"],
     ["v", "y"],
-    ["w", "n"]
+    ["w", "n"],
+    ["rd", "u"],
+    ["l", "j"],
+    ["ld", "m"],
+    ["s", "8"],
+    ["z", "k"],
+    ["ss", "<"],
+    ["hy", "9"],
+    ["hw", "o"],
+    ["i", "l"],
+    ["u", "."]
     
 ]
 
@@ -245,11 +255,6 @@ const charToSymb = [
     {latin: "ui", chars: "."},
     {latin: "uo", chars: "."},
     {latin: "uu", chars: "."},
-    {latin: "ha", chars: ""},
-    {latin: "he", chars: ""},
-    {latin: "hi", chars: ""},
-    {latin: "ho", chars: ""},
-    {latin: "hu", chars: ""},
     //y chars
     {latin: "tya", chars: "t"},
     {latin: "tye", chars: "t"},
@@ -453,8 +458,13 @@ const parse = (text, type) => {
     finished = "";
     switch (type){
         case "quenya":
-            for (set of charToSymb.tengwar){
-
+            for (let i = 0; i < text.length; i++){
+                for (let j = 0; j < charToSymb.length; j ++){
+                    if (text[i] === charToSymb[j][0]) {
+                        text[i] = charToSymb[j][1];
+                        break;
+                    }
+                }
             }
             break;
     }
