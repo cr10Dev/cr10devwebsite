@@ -460,8 +460,8 @@ const parse = (text, type) => {
         case "quenya":
             for (let i = 0; i < text.length; i++){
                 for (let j = 0; j < charToSymb.length; j ++){
-                    if (text[i] === charToSymb[j][0]) {
-                        text[i] = charToSymb[j][1];
+                    if (text[i] === charToSymb[j].latin) {
+                        text[i] = charToSymb[j].chars;
                         break;
                     }
                 }
