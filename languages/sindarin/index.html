@@ -21,13 +21,39 @@
         <link href="https://fonts.cdnfonts.com/css/tengwar-annatar?styles=13274" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
 </head>
-<body onload="loadPartials('https:\/\/cr10dev.github.io\/partials.json')">
+<body onload="loadPartials('https:\/\/cr10dev.github.io\/partials.json');display();">
     <div class="navbar-insert"></div>
     <main>
         <!-- <h1 class="sindarinText">=</h1> -->
-        <table id="tester">
+        <div class="container" id="doStuffHere" style="margin-bottom: 20px;">
+            <h1 style="text-align: center; margin-bottom: 30px;" id="char">test</h1>
+            <div class="row">
+                <div class="col-3" style="text-align: center;">
+                    <h1 class="sindarinText" id="text-0">test</h1>
+                    <p><small id="actual-0">test</small></p>
+                    <button type="button" class="btn btn-primary" onclick="advance(0);">This one</button>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <h1 class="sindarinText" id="text-1">test</h1>
+                    <p><small id="actual-1">test</small></p>
+                    <button type="button" class="btn btn-primary" onclick="advance(1);">This one</button>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <h1 class="sindarinText" id="text-2">test</h1>
+                    <p><small id="actual-2">test</small></p>
+                    <button type="button" class="btn btn-primary" onclick="advance(2);">This one</button>
+                </div>
+                <div class="col-3" style="text-align: center;">
+                    <h1 class="sindarinText" id="text-3">test</h1>
+                    <p><small id="actual-3">test</small></p>
+                    <button type="button" class="btn btn-primary" onclick="advance(3);">This one</button>
+                </div>
+            </div>
+        </div>
+        <kbd id="output"></kbd>
+        <!-- <table id="tester">
             
-        </table>
+        </table> -->
     </main>
     <script src="latinToTengwar.js"></script>
     <!-- <p class="sindarinText">1$xD6</p> -->

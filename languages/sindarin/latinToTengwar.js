@@ -1,4 +1,31 @@
 //document.addEventListener("DOMContentLoaded", convert, false);
+tengwarIndex = 0;
+vowelIndex = 0;
+output = ""
+
+function display() {
+    document.getElementById("char").innerHTML = tengwar[tengwarIndex][0] + Object.keys(tehta)[vowelIndex]
+    for (let i = 0; i < 4; i++) {
+        if (tehta[Object.keys(tehta)[vowelIndex]][i]) {
+            document.getElementById(`text-${i}`).innerHTML = `${tengwar[tengwarIndex][1]}${tehta[Object.keys(tehta)[vowelIndex]][i]}`
+            document.getElementById(`actual-${i}`).innerHTML = `${tengwar[tengwarIndex][1]}${tehta[Object.keys(tehta)[vowelIndex]][i]}`
+        } else {
+            document.getElementById(`text-${i}`).innerHTML = "---"
+            document.getElementById(`actual-${i}`).innerHTML = "---"
+        }
+    }
+}
+
+function advance(chosen) {
+    document.getElementById("output").innerHTML += `["${tengwar[tengwarIndex][0] + Object.keys(tehta)[vowelIndex]}", "${tengwar[tengwarIndex][1]}${tehta[Object.keys(tehta)[vowelIndex]][chosen]}"],<br>`;
+    vowelIndex++;
+    if (vowelIndex == 5) {
+        vowelIndex = 0;
+        tengwarIndex++;
+    }
+    if (tengwarIndex >= tengwar.length) return document.getElementById("char").innerHTML = "All characters done";
+    display();
+}
 
 const convert = () => {
     const texts = document.getElementsByClassName("sindarinText");
@@ -42,19 +69,7 @@ const tengwar = [
     ["ngw", "x"],
     ["hw", "c"],
     ["nqu", "v"],
-    ["nw", "b"],
-    ["v", "y"],
-    ["w", "n"],
-    ["rd", "u"],
-    ["l", "j"],
-    ["ld", "m"],
-    ["s", "8"],
-    ["z", "k"],
-    ["ss", "<"],
-    ["hy", "9"],
-    ["hw", "o"],
-    ["i", "l"],
-    ["u", "."]
+    ["nw", "b"]
     
 ]
 
@@ -62,149 +77,139 @@ vowels = ["a", "e", "i", "o", "u"]
 
 
 for (let j = 0; j < tengwar.length; j++) {
-    rowStr = "<tr>";
-    for (let k = 0; k < vowels.length; k++  ) {
-        str = "<td>"
-        for (let i = 0; i < tehta[vowels[k]].length; i++) {
-        charStr = tengwar[j][1]+tehta[vowels[k]][i];
-        str += `<span class="sindarinText">${charStr}</span> -> ${charStr}<br>`;
-        }
-        str += "</td>"
-        rowStr += str;
-    }
-    rowStr += "</td>"
-    console.log(document.getElementById("tester"))
-    document.getElementById("tester").innerHTML += rowStr;
+    // rowStr = "<tr>";
+    // for (let k = 0; k < vowels.length; k++  ) {
+    //     str = "<td>"
+    //     for (let i = 0; i < tehta[vowels[k]].length; i++) {
+    //     charStr = tengwar[j][1]+tehta[vowels[k]][i];
+    //     str += `<span class="sindarinText">${charStr}</span> -> ${charStr}<br>`;
+    //     }
+    //     str += "</td>"
+    //     rowStr += str;
+    // }
+    // rowStr += "</td>"
+    // console.log(document.getElementById("tester"))
+    // document.getElementById("tester").innerHTML += rowStr;
+
 }
 
 const charToSymb = [
-    {latin: "ta", chars: "1"},
-    {latin: "te", chars: "1"},
-    {latin: "ti", chars: "1"},
-    {latin: "to", chars: "1"},
-    {latin: "tu", chars: "1"},
-    {latin: "da", chars: "2"},
-    {latin: "de", chars: "2"},
-    {latin: "di", chars: "2"},
-    {latin: "do", chars: "2"},
-    {latin: "du", chars: "2"},
-    {latin: "sa", chars: "3"},
-    {latin: "se", chars: "3"},
-    {latin: "si", chars: "3"},
-    {latin: "so", chars: "3"},
-    {latin: "su", chars: "3"},
-    {latin: "nta", chars: "4"},
-    {latin: "nte", chars: "4"},
-    {latin: "nti", chars: "4"},
-    {latin: "nto", chars: "4"},
-    {latin: "ntu", chars: "4"},
-    {latin: "na", chars: "5"},
-    {latin: "ne", chars: "5"},
-    {latin: "ni", chars: "5"},
-    {latin: "no", chars: "5"},
-    {latin: "nu", chars: "5"},
-    {latin: "ra", chars: "7"},
-    {latin: "re", chars: "7"},
-    {latin: "ri", chars: "7"},
-    {latin: "ro", chars: "7"},
-    {latin: "ru", chars: "7"},
+    {latin: "ta", chars: "1E"},
+    {latin: "te", chars: "1F"},
+    {latin: "ti", chars: "1T"},
+    {latin: "to", chars: "1Y"},
+    {latin: "tu", chars: "1U"},
+    {latin: "da", chars: "2#"},
+    {latin: "de", chars: "2$"},
+    {latin: "di", chars: "2%"},
+    {latin: "do", chars: "2^"},
+    {latin: "du", chars: "2&"},
+    {latin: "sa", chars: "3C"},
+    {latin: "se", chars: "3F"},
+    {latin: "si", chars: "3G"},
+    {latin: "so", chars: "3H"},
+    {latin: "su", chars: "3J"},
+    {latin: "nta", chars: "4E"},
+    {latin: "nte", chars: "4$"},
+    {latin: "nti", chars: "4%"},
+    {latin: "nto", chars: "4^"},
+    {latin: "ntu", chars: "4&"},
+    {latin: "na", chars: "5#"},
+    {latin: "ne", chars: "5$"},
+    {latin: "ni", chars: "5%"},
+    {latin: "no", chars: "5^"},
+    {latin: "nu", chars: "5&"},
+    {latin: "ra", chars: "7E"},
+    {latin: "re", chars: "7F"},
+    {latin: "ri", chars: "7T"},
+    {latin: "ro", chars: "7Y"},
+    {latin: "ru", chars: "7U"},
     {latin: "r", chars: "6"},
-    {latin: "pa", chars: "q"},
-    {latin: "pe", chars: "q"},
-    {latin: "pi", chars: "q"},
-    {latin: "po", chars: "q"},
-    {latin: "pu", chars: "q"},
-    {latin: "mba", chars: "w"},
-    {latin: "mbe", chars: "w"},
-    {latin: "mbi", chars: "w"},
-    {latin: "mbo", chars: "w"},
-    {latin: "mbu", chars: "w"},
-    {latin: "fa", chars: "e"},
-    {latin: "fe", chars: "e"},
-    {latin: "fi", chars: "e"},
-    {latin: "fo", chars: "e"},
-    {latin: "fu", chars: "e"},
-    {latin: "mpa", chars: "r"},
-    {latin: "mpe", chars: "r"},
-    {latin: "mpi", chars: "r"},
-    {latin: "mpo", chars: "r"},
-    {latin: "mpu", chars: "r"},
-    {latin: "ma", chars: "t"},
-    {latin: "me", chars: "t"},
-    {latin: "mi", chars: "t"},
-    {latin: "mo", chars: "t"},
-    {latin: "mu", chars: "t"},
-    {latin: "va", chars: "y"},
-    {latin: "ve", chars: "y"},
-    {latin: "vi", chars: "y"},
-    {latin: "vo", chars: "y"},
-    {latin: "vu", chars: "y"},
-    {latin: "wa", chars: "n"},
-    {latin: "we", chars: "n"},
-    {latin: "wi", chars: "n"},
-    {latin: "wo", chars: "n"},
-    {latin: "wu", chars: "n"},
-    {latin: "ca", chars: "a"},
-    {latin: "ce", chars: "a"},
-    {latin: "ci", chars: "a"},
-    {latin: "co", chars: "a"},
-    {latin: "cu", chars: "a"},
-    {latin: "nga", chars: "s"},
-    {latin: "nge", chars: "s"},
-    {latin: "ngi", chars: "s"},
-    {latin: "ngo", chars: "s"},
-    {latin: "ngu", chars: "s"},
-    {latin: "cha", chars: "d"},
-    {latin: "che", chars: "d"},
-    {latin: "chi", chars: "d"},
-    {latin: "cho", chars: "d"},
-    {latin: "chu", chars: "d"},
-    {latin: "nca", chars: "f"},
-    {latin: "nce", chars: "f"},
-    {latin: "nci", chars: "f"},
-    {latin: "nco", chars: "f"},
-    {latin: "ncu", chars: "f"},
-    {latin: "na", chars: "g"},
-    {latin: "ne", chars: "g"},
-    {latin: "ni", chars: "g"},
-    {latin: "no", chars: "g"},
-    {latin: "nu", chars: "g"},
-    {latin: "qua", chars: "z"},
-    {latin: "que", chars: "z"},
-    {latin: "qui", chars: "z"},
-    {latin: "quo", chars: "z"},
-    {latin: "quu", chars: "z"},
-    {latin: "ngwa", chars: "x"},
-    {latin: "ngwe", chars: "x"},
-    {latin: "ngwi", chars: "x"},
-    {latin: "ngwo", chars: "x"},
-    {latin: "ngwu", chars: "x"},
-    {latin: "hwa", chars: "c"},
-    {latin: "hwe", chars: "c"},
-    {latin: "hwi", chars: "c"},
-    {latin: "hwo", chars: "c"},
-    {latin: "hwu", chars: "c"},
-    {latin: "nqua", chars: "v"},
-    {latin: "nque", chars: "v"},
-    {latin: "nqui", chars: "v"},
-    {latin: "nquo", chars: "v"},
-    {latin: "nquu", chars: "v"},
-    {latin: "nwa", chars: "b"},
-    {latin: "nwe", chars: "b"},
-    {latin: "nwi", chars: "b"},
-    {latin: "nwo", chars: "b"},
-    {latin: "nwu", chars: "b"},
-    {latin: "va", chars: "y"},
-    {latin: "ve", chars: "y"},
-    {latin: "vi", chars: "y"},
-    {latin: "vo", chars: "y"},
-    {latin: "vu", chars: "y"},
-    {latin: "wa", chars: "n"},
-    {latin: "we", chars: "n"},
-    {latin: "wi", chars: "n"},
-    {latin: "wo", chars: "n"},
-    {latin: "wu", chars: "n"},
-    //non boxed bit
+    {latin: "pa", chars: "qE"},
+    {latin: "pe", chars: "qF"},
+    {latin: "pi", chars: "qT"},
+    {latin: "po", chars: "qY"},
+    {latin: "pu", chars: "qU"},
+    {latin: "mba", chars: "w#"},
+    {latin: "mbe", chars: "w$"},
+    {latin: "mbi", chars: "w%"},
+    {latin: "mbo", chars: "w^"},
+    {latin: "mbu", chars: "w&"},
+    {latin: "fa", chars: "eD"},
+    {latin: "fe", chars: "eF"},
+    {latin: "fi", chars: "eG"},
+    {latin: "fo", chars: "eH"},
+    {latin: "fu", chars: "eJ"},
+    {latin: "mpa", chars: "r#"},
+    {latin: "mpe", chars: "r$"},
+    {latin: "mpi", chars: "r%"},
+    {latin: "mpo", chars: "r^"},
+    {latin: "mpu", chars: "r&"},
+    {latin: "ma", chars: "t#"},
+    {latin: "me", chars: "t$"},
+    {latin: "mi", chars: "t%"},
+    {latin: "mo", chars: "t^"},
+    {latin: "mu", chars: "t&"},
+    {latin: "va", chars: "yE"},
+    {latin: "ve", chars: "yF"},
+    {latin: "vi", chars: "yT"},
+    {latin: "vo", chars: "yY"},
+    {latin: "vu", chars: "yU"},
+    {latin: "wa", chars: "nE"},
+    {latin: "we", chars: "nF"},
+    {latin: "wi", chars: "nT"},
+    {latin: "wo", chars: "nY"},
+    {latin: "wu", chars: "nU"},
+    {latin: "ca", chars: "aD"},
+    {latin: "ce", chars: "aF"},
+    {latin: "ci", chars: "aG"},
+    {latin: "co", chars: "aH"},
+    {latin: "cu", chars: "aJ"},
+    {latin: "nga", chars: "s#"},
+    {latin: "nge", chars: "s$"},
+    {latin: "ngi", chars: "s%"},
+    {latin: "ngo", chars: "s^"},
+    {latin: "ngu", chars: "s&"},
+    {latin: "cha", chars: "dE"},
+    {latin: "che", chars: "d$"},
+    {latin: "chi", chars: "dT"},
+    {latin: "cho", chars: "d^"},
+    {latin: "chu", chars: "dU"},
+    {latin: "nca", chars: "f#"},
+    {latin: "nce", chars: "f$"},
+    {latin: "nci", chars: "f%"},
+    {latin: "nco", chars: "f^"},
+    {latin: "ncu", chars: "f&"},
+    {latin: "na", chars: "g#"},
+    {latin: "ne", chars: "g$"},
+    {latin: "ni", chars: "g%"},
+    {latin: "no", chars: "g^"},
+    {latin: "nu", chars: "g&"},
+    {latin: "qua", chars: "zE"},
+    {latin: "que", chars: "zF"},
+    {latin: "qui", chars: "zT"},
+    {latin: "quo", chars: "zY"},
+    {latin: "quu", chars: "zU"},
+    {latin: "ngwa", chars: "x#"},
+    {latin: "ngwe", chars: "x$"},
+    {latin: "ngwi", chars: "x%"},
+    {latin: "ngwo", chars: "x^"},
+    {latin: "ngwu", chars: "x&"},
+    {latin: "hwa", chars: "cE"},
+    {latin: "hwe", chars: "c$"},
+    {latin: "hwi", chars: "cT"},
+    {latin: "hwo", chars: "c^"},
+    {latin: "hwu", chars: "cU"},
+    {latin: "nqua", chars: "v#"},
+    {latin: "nque", chars: "v$"},
+    {latin: "nqui", chars: "v%"},
+    {latin: "nquo", chars: "v^"},
+    {latin: "nquu", chars: "v&"},
+    {latin: "nwa", chars: "b#"},
+    {latin: "nwe", chars: "b$"},
+    {latin: "nwi", chars: "b%"},
+    {latin: "nwo", chars: "b^"},
+    { latin: "nwu", chars: "b&" },
     {latin: "rda", chars: "u"},
     {latin: "rde", chars: "u"},
     {latin: "rdi", chars: "u"},
@@ -255,6 +260,11 @@ const charToSymb = [
     {latin: "ui", chars: "."},
     {latin: "uo", chars: "."},
     {latin: "uu", chars: "."},
+    {latin: "ha", chars: ""},
+    {latin: "he", chars: ""},
+    {latin: "hi", chars: ""},
+    {latin: "ho", chars: ""},
+    {latin: "hu", chars: ""},
     //y chars
     {latin: "tya", chars: "t"},
     {latin: "tye", chars: "t"},
@@ -458,13 +468,8 @@ const parse = (text, type) => {
     finished = "";
     switch (type){
         case "quenya":
-            for (let i = 0; i < text.length; i++){
-                for (let j = 0; j < charToSymb.length; j ++){
-                    if (text[i] === charToSymb[j].latin) {
-                        text[i] = charToSymb[j].chars;
-                        break;
-                    }
-                }
+            for (set of charToSymb.tengwar){
+
             }
             break;
     }
